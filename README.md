@@ -1,7 +1,7 @@
 # 人臉辨識+姿態辨識專案
 
 ## 流程圖
-![健身圖標](ITRI_Facial_Posture_Recognition_System/png/流程圖.png)
+![健身圖標](png/流程圖.png)
 
 
 ## 專案結構
