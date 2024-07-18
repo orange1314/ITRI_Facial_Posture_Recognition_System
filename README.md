@@ -1,7 +1,7 @@
 # 人臉辨識+姿態辨識專案
 
 ## 流程圖
-![健身圖標](png/流程圖.png)
+![健身圖標](png\流程圖.png)
 
 
 ## 專案結構
@@ -72,6 +72,13 @@
 ### 10. 分析結果產出報表
 - **展示方式**：使用圖表、數據可視化工具展示分析結果。
 - **決策支持**：根據分析結果進行運動計劃調整和效果評估。
+
+
+[PostureRecognition 訓練模型流程說明](https://github.com/orange1314/ITRI_Facial_Posture_Recognition_System/blob/main/PostureRecognition/PostureRecognition.md)
+
+[action_recognition_main.py 推理流程說明](https://github.com/orange1314/ITRI_Facial_Posture_Recognition_System/blob/main/action_recognition_main.md)
+
+
 
 
 
