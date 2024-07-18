@@ -27,6 +27,15 @@ warnings.filterwarnings("ignore", category=UserWarning, module='google.protobuf.
 warnings.filterwarnings(action='ignore', category=DataConversionWarning)
 
 def get_video_metadata(video_path):
+    """
+    獲取視頻文件的元數據，包括創建時間。
+    
+    參數:
+    - video_path: str，視頻文件的路徑。
+    
+    返回:
+    - creation_time: str，視頻創建時間（如果可用）。
+    """
     try:
         result = subprocess.run(['ffprobe', '-v', 'quiet', '-print_format', 'json', '-show_format', video_path],
                                 stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True, encoding='utf-8')
@@ -38,6 +47,12 @@ def get_video_metadata(video_path):
         return None
 
 def main(video_path):
+    """
+    主函數，用於處理視頻文件，進行動作識別和人臉檢測。
+    
+    參數:
+    - video_path: str，視頻文件的路徑。
+    """
     time_steps = 70  # 固定 time_steps
 
     # 加載視頻
@@ -247,6 +262,12 @@ def main(video_path):
     print("Processing complete.")
 
 def parse_arguments():
+    """
+    解析命令行參數。
+    
+    返回:
+    - args: 解析後的參數對象，包含視頻文件的路徑。
+    """
     parser = argparse.ArgumentParser(description='Action Recognition Main Program')
     parser.add_argument('video_path', type=str, help='Path to the video file')
     return parser.parse_args()
