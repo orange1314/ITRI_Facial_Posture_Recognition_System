@@ -5,6 +5,18 @@ import numpy as np
 train_path = "train"
 
 def combine_data(train_path):
+    """
+    合併訓練資料夾中的數據片段，並保存為一個 .npz 文件。
+    
+    參數:
+    - train_path: str，包含訓練數據的資料夾路徑。
+    
+    功能:
+    - 遍歷訓練資料夾中的所有子資料夾，讀取數據片段和標籤。
+    - 將所有數據片段和標籤合併為 numpy 數組。
+    - 保存合併後的數據和標籤到一個 .npz 文件。
+    - 打印各類別的資料數量。
+    """
     # 初始化數據和標籤列表
     data_slices = []
     labels = []

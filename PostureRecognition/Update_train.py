@@ -9,6 +9,15 @@ train_path = "train"
 
 # 清空 train 資料夾
 def clear_directory(path):
+    """
+    清空指定目錄。
+    
+    參數:
+    - path: str，目錄的路徑。
+    
+    功能:
+    - 刪除指定目錄及其內容。如果刪除失敗，則嘗試使用系統命令強制刪除。
+    """
     if os.path.exists(path):
         try:
             shutil.rmtree(path)
@@ -21,6 +30,19 @@ def clear_directory(path):
 
 # 定義滑動窗口函數
 def sliding_window(data, window_size, step_size, label):
+    """
+    使用滑動窗口提取數據片段。
+    
+    參數:
+    - data: numpy.ndarray，包含骨架資訊的數據。
+    - window_size: int，滑動窗口的大小。
+    - step_size: int，滑動窗口的步長。
+    - label: str，數據的標籤。
+    
+    返回:
+    - slices: list，包含數據片段和相應標籤的列表。
+    """
+
     num_frames, num_keypoints, num_coords = data.shape
     slices = []
 
@@ -39,6 +61,15 @@ def sliding_window(data, window_size, step_size, label):
 
 # 處理每個動作的資料並儲存
 def process_and_save_data(npy_path, train_path, window_size, step_size=10):
+    """
+    處理每個動作的數據，使用滑動窗口提取片段並保存。
+    
+    參數:
+    - npy_path: str，包含原始數據的目錄。
+    - train_path: str，保存處理後數據的目錄。
+    - window_size: int，滑動窗口的大小。
+    - step_size: int，滑動窗口的步長。
+    """
     labels = os.listdir(npy_path)
 
     for label in labels:

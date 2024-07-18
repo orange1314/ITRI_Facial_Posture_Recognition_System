@@ -19,6 +19,16 @@ output_dir = 'action_npy'
 os.makedirs(output_dir, exist_ok=True)
 
 def process_video(video_path, output_path):
+    """
+    處理視頻，將每幀的骨架資訊轉換並保存為 .npy 文件。
+    
+    參數:
+    - video_path: str，視頻文件的路徑。
+    - output_path: str，輸出的 .npy 文件路徑。
+    
+    返回:
+    - average_time_per_frame: float，平均每幀的推理時間。
+    """
     cap = cv2.VideoCapture(video_path)
     frames_data = []
     total_time = 0
@@ -87,6 +97,16 @@ def process_video(video_path, output_path):
     return average_time_per_frame
 
 def is_new_file(video_path, npy_path):
+    """
+    檢查視頻文件是否更新過，如果更新過則需要重新處理。
+    
+    參數:
+    - video_path: str，視頻文件的路徑。
+    - npy_path: str，對應的 .npy 文件路徑。
+    
+    返回:
+    - bool，True 表示視頻文件較新，需要重新處理；False 表示不需要。
+    """
     if not os.path.exists(npy_path):
         return True
     video_time = os.path.getmtime(video_path)

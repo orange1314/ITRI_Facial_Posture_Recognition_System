@@ -12,6 +12,20 @@ import torch.nn as nn
 import argparse
 
 def main(time_step):
+    """
+    主函數，用於訓練姿態集成模型。
+    
+    參數:
+    - time_step: int，滑動窗口的大小。
+    
+    功能:
+    - 加載數據並進行標籤編碼。
+    - 分割數據集為訓練集和測試集。
+    - 創建數據集和數據加載器。
+    - 初始化模型和訓練相關的參數。
+    - 訓練和評估模型。
+    - 保存訓練好的模型。
+    """
     # 加載數據
     loaded = np.load('data_combined.npz')
     data_slices = loaded['data']
@@ -33,6 +47,13 @@ def main(time_step):
 
     # 創建數據集和數據加載器
     class SkeletonDataset(Dataset):
+        """
+        自定義數據集類別，用於加載骨架數據。
+        
+        參數:
+        - data: numpy.ndarray，數據片段。
+        - labels: numpy.ndarray，數據標籤。
+        """
         def __init__(self, data, labels):
             self.data = data
             self.labels = labels
@@ -69,6 +90,19 @@ def main(time_step):
 
     # 訓練函數
     def train_model(model, train_loader, criterion, optimizer, num_epochs=20):
+        """
+        訓練模型。
+        
+        參數:
+        - model: nn.Module，待訓練的模型。
+        - train_loader: DataLoader，訓練數據加載器。
+        - criterion: 損失函數。
+        - optimizer: 優化器。
+        - num_epochs: int，訓練的輪數。
+        
+        功能:
+        - 訓練模型並顯示訓練進度。
+        """
         progress = Progress(
             SpinnerColumn(), 
             BarColumn(), 
@@ -103,6 +137,16 @@ def main(time_step):
 
     # 評估函數
     def evaluate_model(model, test_loader):
+        """
+        評估模型。
+        
+        參數:
+        - model: nn.Module，待評估的模型。
+        - test_loader: DataLoader，測試數據加載器。
+        
+        功能:
+        - 評估模型並顯示評估進度。
+        """
         model.eval()
         correct = 0
         total = 0
