@@ -78,6 +78,9 @@
 
 [action_recognition_main.py 推理流程說明](https://github.com/orange1314/ITRI_Facial_Posture_Recognition_System/blob/main/action_recognition_main.md)
 
+[Data_Processing.ipynb 資料處理流程](https://github.com/orange1314/ITRI_Facial_Posture_Recognition_System/blob/main/Data_Processing.md)
+
+
 
 
 
