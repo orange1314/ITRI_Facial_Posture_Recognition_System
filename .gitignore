@@ -1,2 +1,5 @@
 
 PostureRecognition/data_combined.npz
+PostureRecognition/test_data.npz
+PostureRecognition/data_combined_augmented.npz
+PostureRecognition/data_combined_augmented_sampled.npz
