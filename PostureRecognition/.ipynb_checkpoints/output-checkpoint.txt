@@ -1,0 +1,16 @@
+Accuracy for action Bent_Leg_Kickback: 49.44%
+Accuracy for action Bent_Over_Row: 40.00%
+Accuracy for action Bird_Dog: 3.24%
+Accuracy for action Crunch_Floor: 0.00%
+Accuracy for action Deadlift: 100.00%
+Accuracy for action Dead_Bug: 100.00%
+Accuracy for action Farmers_walk: 0.00%
+Accuracy for action Front_Plank: 0.00%
+Accuracy for action glute-bridge: 100.00%
+Accuracy for action Kettlebell_Strict_Press: 50.00%
+Accuracy for action Mountain_Climber: 78.33%
+Accuracy for action Prone: 100.00%
+Accuracy for action push_up: 19.05%
+Accuracy for action Resistance_Band_Side_Walk: 0.00%
+Accuracy for action Russian_Twist: 0.00%
+Accuracy for action Squat: 100.00%

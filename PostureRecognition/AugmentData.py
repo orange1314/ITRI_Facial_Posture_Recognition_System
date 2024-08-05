@@ -90,7 +90,7 @@ X_combined = np.concatenate((X_rotated_combined, X_flipped), axis=0)
 y_combined = np.concatenate((y_rotated_combined, y_flipped), axis=0)
 
 # 每一個類別隨機抽取最多5000個樣本，保留原始數據，隨機抽滿到5000
-def sample_data(X, y, original_indices, max_samples=7000):
+def sample_data(X, y, original_indices, max_samples=5000):
     unique_labels = np.unique(y)
     sampled_X = []
     sampled_y = []
